@@ -17,7 +17,14 @@
             <p class="subtitle is-4">
                 Your tiny social network built with Django
             </p>
+            {% if user.is_authenticated %}
+                <a href="{% url 'dwitter:dashboard' %}">HomePage |</a>
+                <a href="{% url 'dwitter:profile' user.profile.id %}">your profile |</a>
+                <a href="{% url 'dwitter:password_change' %}">Change password |</a>
+                <a href="{% url 'dwitter:logout'%}">Logout</a>
+            {%endif%}
         </div>
+
     </section>
     <div class="container">
         <div class="columns">
@@ -25,6 +32,7 @@
             {% endblock content %}
         </div>
     </div>
+    
 </body>
 
 </html>

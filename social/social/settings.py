@@ -55,7 +55,7 @@ ROOT_URLCONF = "social.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": ["dwitter/templates/"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -116,4 +116,11 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
 LOGIN_REDIRECT_URL = "dwitter:dashboard"
+LOGOUT_REDIRECT_URL = "dwitter:login"
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_HOST = "localhost"
+EMAIL_PORT = 1025
