@@ -8,7 +8,7 @@ class ProfileInline(admin.StackedInline):
 
 class UserAdmin(admin.ModelAdmin):
     model = User
-    fields = ["username","password"]
+    fields = ["username","password","email"]
     inlines = [ProfileInline]
     
 admin.site.unregister(Group)
